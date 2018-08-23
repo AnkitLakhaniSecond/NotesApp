@@ -28,6 +28,8 @@ const argv=yargs.command("ADD","to add notes please Enter Name,City,College alia
     demand:true,
     alias:'n'
   }
+}).command("LIST","to list all notes",{
+  
 }).help().argv;
 
 var printing=(note)=>{
