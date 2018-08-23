@@ -1,6 +1,34 @@
 const yargs=require('yargs')
 const notes=require("./notes.js")
-const argv=yargs.argv;
+const argv=yargs.command("ADD","to add notes please Enter Name,City,College alias -n,-ci,-co",{
+  name:{
+    describe:"name of the person",
+    demand:true,
+    alias:'n'
+  },
+  college:{
+    describe:"name of the person's college",
+    demand:true,
+    alias:'co'
+  },
+  city:{
+    describe:"name of the person's city",
+    demand:true,
+    alias:'ci'
+  }
+}).command("REMOVE","to remove notes please Enter Name of person alias -n",{
+  name:{
+    describe:"name of the person",
+    demand:true,
+    alias:'n'
+  }
+}).command("READ","to READ notes please Enter Name of person alias -n",{
+  name:{
+    describe:"name of the person",
+    demand:true,
+    alias:'n'
+  }
+}).help().argv;
 
 var printing=(note)=>{
   console.log("------------------------------------------- DATA ----------------------------------------------")
